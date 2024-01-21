@@ -1,0 +1,197 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.main-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* overflow: hidden; */
+    width: 90%;
+}
+
+
+.main-card img {
+    width: 100%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%; /* Make it circular */
+    border-bottom-right-radius: 50%; /* Make it circular */
+}
+
+.main-card .col-md-8 {
+    padding: 20px;
+}
+
+.main-card h1 {
+    color: #343a40;
+}
+
+.main-card h4 {
+    color: #495057;
+}
+
+.main-card p {
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+#repos {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: column;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#repos .w-400 {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#repos .w-400:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#repos h3 {
+    color: #343a40;
+}
+
+#repos p {
+    color: #495057;
+}
+
+#repos span p {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 3px;
+}
+
+.form-control {
+    width: 60%;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.w-400{
+    min-width: 400px;
+    max-width: 400px;
+}
+
+/* .location{
+    display: flex;
+    align-items: center;
+} */
+.location img{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    justify-content: baseline;
+    width: 15px;
+    height: 15px;
+}
+.location p{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* form styling */
+
+#form {
+    margin: 20px auto;
+    text-align: center;
+}
+
+#search {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+#form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#form button:hover {
+    background-color: #0056b3;
+}
+
+/* Add this to your existing CSS */
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+
+/* loader css */
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
