@@ -5,21 +5,25 @@ const reposPerPage = 10;
 let repoFetched = false;
 
 // Function to show loader
-// const showLoader = () => {
-//     const loader = document.createElement("div");
-//     loader.classList.add("loader");
-//     main.appendChild(loader);
-// };
+const showLoader = () => {
+    const loader = document.createElement("div");
+    loader.classList.add("loader");
+    main.appendChild(loader);
+};
 
 // Function to hide loader
-// const hideLoader = () => {
-//     if(repoFetched){
-//         const loader = document.querySelector(".loader");
-//         if (loader) {
-//             loader.remove();
-//         }
-//     }
-// };
+const hideLoader = () => {
+    // if(repoFetched){
+    //     const loader = document.querySelector(".loader");
+    //     if (loader) {
+    //         loader.remove();
+    //     }
+    // }
+    const loader = document.querySelector(".loader");
+    if (loader) {
+        loader.remove();
+    }
+};
 
 async function calTotalRepos(username) {
 
@@ -54,7 +58,7 @@ async function calTotalRepos(username) {
 }
 
 const getUser = async(username) => {
-    // showLoader();
+    showLoader();
     const response = await fetch(BASE_URL + username);
     const data = await response.json();
     // console.log(data)
@@ -83,6 +87,7 @@ const getUser = async(username) => {
     `
     main.innerHTML = card;
     await getRepos(username, currentPage);
+    hideLoader();
 }
 
 
