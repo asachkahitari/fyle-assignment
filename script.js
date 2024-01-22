@@ -1,7 +1,7 @@
 const BASE_URL = "https://api.github.com/users/";
 const main = document.querySelector("#main");
 let currentPage = 1;
-const reposPerPage = 10;
+let reposPerPage = 10;
 let repoFetched = false;
 
 // Function to show loader
@@ -104,6 +104,9 @@ const formSubmit = () => {
 
 const getRepos = async(username, page) => {
 
+    const reposPerPageSelect = document.getElementById("reposPerPage");
+    reposPerPage = reposPerPageSelect.options[reposPerPageSelect.selectedIndex].value;
+
     const repos = document.querySelector("#repos")
     repos.innerHTML = '';
 
@@ -116,7 +119,7 @@ const getRepos = async(username, page) => {
     const totalRepos = await calTotalRepos(username);
     console.log(totalRepos);
 
-    // console.log(data);
+    console.log(data);
     data.forEach(
         (item) => {
             // console.log(item);
@@ -147,7 +150,14 @@ const getRepos = async(username, page) => {
             div.appendChild(para);
             div.appendChild(span);
 
-            repos.appendChild(div);
+            const repoLink = document.createElement("a");
+            repoLink.href = item.html_url;
+            repoLink.target = "_blank"; // Open the link in a new tab
+            repoLink.appendChild(div);
+
+            repos.appendChild(repoLink);
+
+            // repos.appendChild(div);
 
 
         }

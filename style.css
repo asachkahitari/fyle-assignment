@@ -195,3 +195,29 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.reposPerPage{
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: center; */
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+label[for="reposPerPage"] {
+    /* display: block; */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#reposPerPage {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    /* width: 100%; */
+    box-sizing: border-box;
+}
